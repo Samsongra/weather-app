@@ -14,4 +14,8 @@ let weather = {
         }
         return response.json();
       })
-      .then((data) => this.displayWeather(data));
+      then((data) => this.displayWeather(data));
+  },
+  displayWeather: function (data) {
+    const { name } = data;
+	  
