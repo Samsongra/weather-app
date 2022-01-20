@@ -17,5 +17,5 @@ let weather = {
       then((data) => this.displayWeather(data));
   },
   displayWeather: function (data) {
-    const { name } = data;
+    const { name } = data
 	  
