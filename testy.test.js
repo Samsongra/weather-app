@@ -1,4 +1,4 @@
-const searchCountries = require("./search_countries");
+const searchCountries = require("./search_cities");
 
 test("if no argument is given, return countries beginning with the letter A", () => {
   expect(searchCountries().length).toBe(15);
