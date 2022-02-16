@@ -5,7 +5,7 @@ test("ensure that the city name cannot begin with a space", () => {
 });
 
 test("ensure that empty string is not valid", () => {
-  expect(validateCity(" Warsaw")).toBe(false);
+  expect(validateCity("")).toBe(false);
 });
 
 test("make sure that a city consisting only of numbers is not a valid city", () => {
@@ -14,6 +14,14 @@ test("make sure that a city consisting only of numbers is not a valid city", () 
 
 test("make sure the city is correct", () => {
   expect(validateCity("Warsaw")).toBe(true);
+});
+
+test("make sure the city is correct (special characters)", () => {
+  expect(validateCity("Bielsko-Biala")).toBe(true);
+});
+
+test("make sure the city is correct (random characters)", () => {
+  expect(validateCity("enrgyuebvfusdicnuigrensdiucb")).toBe(true);
 });
 
 test("make sure the city is written in Latin characters", () => {
