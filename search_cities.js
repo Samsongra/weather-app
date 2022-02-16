@@ -16,24 +16,17 @@ function searchCountries(search = null) {
   }
   var unique = toSearch.filter(onlyUnique);
 
-  if (search == null) {
-    let toReturn = [];
-    unique.map((e) => {
-      if (e.toString().toLowerCase().startsWith("a")) {
-        toReturn.push(e);
-      }
-    });
-    return toReturn;
-  } else {
-    let toReturn = [];
-    unique.map((e) => {
-      if (
-        e.toString().toLowerCase().startsWith(search.toString().toLowerCase())
-      ) {
-        toReturn.push(e);
-      }
-    });
-    return toReturn;
-  }
+  let toReturn = [];
+  unique.map((e) => {
+    if (
+      e
+        .toString()
+        .toLowerCase()
+        .startsWith(search === null ? "a" : search.toString().toLowerCase())
+    ) {
+      toReturn.push(e);
+    }
+  });
+  return toReturn;
 }
 module.exports = searchCountries;
